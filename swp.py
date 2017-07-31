@@ -174,7 +174,9 @@ def BPE(Temp=25,Salinity=0):
     T=np.array(Temp)
     if Sal.ndim==0:
         Sal=np.array([Sal])
-    BPE_result=
+    BPE_result=[(8.325e-2 + 1.883e-4*T + 4.02e-6*T**2)*S + (- 7.625e-4 + 9.02e-5*T - 5.2e-7*T**2)*S**2 \
+                +(1.522e-4 - 3e-6*T - 3e-8*T**2)*S**3 for S in Sal]
+    return BPE_result
 #******************************************************************************
 def SurfaceTension(Temp=25,Salinity=0):
     '''this function calculate the surface tension of seawater in mN/m at different temperature (C)
