@@ -163,8 +163,18 @@ def vap_pressure(Temp=25, Salinity=0):
     return p_result
 
 #*****************************************************************
-
-    
+def BPE(Temp=25,Salinity=0):
+    '''this function calculate the boiling point elevation of seawater in C at different temperatures (C)
+    and different salinity in weight percent (wt%). the function is valid in the following ranges
+    Temperature range 10 to 180 C. Salinity range 0 to 16 wt%
+    reference: H.T. El-Dessouky and H.M. Ettouney, Fundamentals of salt water desalination. Elsevier 2002,p-566
+    creater: Ahmad alsaadi, KAUST Saudi Arabia Thuwal. 27/5/2012.
+    '''
+    Sal=np.array(Salinity)
+    T=np.array(Temp)
+    if Sal.ndim==0:
+        Sal=np.array([Sal])
+    BPE_result=
 #******************************************************************************
 def SurfaceTension(Temp=25,Salinity=0):
     '''this function calculate the surface tension of seawater in mN/m at different temperature (C)
